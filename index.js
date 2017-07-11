@@ -1,6 +1,10 @@
 const path = require('path')
 const fs = require('fs-extra')
 const Handlebars = require('handlebars')
+const sharp = require('sharp')
+const request = require('request-promise-native').defaults({
+  encoding: null
+})
 require('handlebars-helpers').math({
   handlebars: Handlebars
 })
@@ -36,7 +40,27 @@ class Generator {
    * Generates a button with the given options.
    * @param {object} options The options to be passed to the template.
    */
-  generate (options) {
+  async generate (options) {
+    if (options && options.images) {
+      await Promise.all(
+        Object.getOwnPropertyNames(options.images).map(async prop => {
+          let image
+          if (options.images[prop].src) {
+            image = sharp(await fs.readFile(options.images[prop].src))
+          } else {
+            image = sharp(await request(options.images[prop].url))
+          }
+          const metadata = await image.metadata()
+          const width = options.images[prop].width || 32
+          const height = options.images[prop].height || 32
+          if (metadata.width > width || metadata.height > height) {
+            image.resize(width, height)
+          }
+          const data = await image.toFormat('png').toBuffer()
+          options[prop] = 'data:image/png;base64,' + data.toString('base64')
+        })
+      )
+    }
     return this._template(options)
   }
 }

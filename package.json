@@ -46,6 +46,9 @@
   "dependencies": {
     "fs-extra": "^3.0.1",
     "handlebars": "^4.0.10",
-    "handlebars-helpers": "^0.9.3"
+    "handlebars-helpers": "^0.9.3",
+    "request": "^2.81.0",
+    "request-promise-native": "^1.0.4",
+    "sharp": "^0.18.2"
   }
 }
