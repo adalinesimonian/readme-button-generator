@@ -1,0 +1,51 @@
+{
+  "name": "readme-button-generator",
+  "version": "1.0.0",
+  "description": "Generates button images for use in readmes",
+  "main": "index.js",
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vsimonian/readme-button-generator.git"
+  },
+  "keywords": [
+    "image",
+    "button",
+    "badge",
+    "github",
+    "readme",
+    "generator",
+    "svg"
+  ],
+  "author": "Vartan Christopher Simonian <vsimonianpress@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vsimonian/readme-button-generator/issues"
+  },
+  "homepage": "https://github.com/vsimonian/readme-button-generator#readme",
+  "engines": {
+    "node": ">=7.6.0"
+  },
+  "engineStrict": true,
+  "xo": {
+    "extends": "standard"
+  },
+  "devDependencies": {
+    "ava": "^0.20.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-config-xo": "^0.18.2",
+    "eslint-plugin-ava": "^4.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "eslint-plugin-unicorn": "^2.1.2",
+    "xo": "^0.18.2"
+  },
+  "dependencies": {
+    "fs-extra": "^3.0.1",
+    "handlebars": "^4.0.10",
+    "handlebars-helpers": "^0.9.3"
+  }
+}

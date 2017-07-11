@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 96 26">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+      .backdrop{
+        fill: #fafafa;
+        stroke: #ccc;
+        stroke-width: 1px;
+      }
+      text{
+        font-size: 13px;
+        font-family: 'Open Sans', sans-serif;
+      }
+    </style>
+  </defs>
+  <rect class="backdrop" x="0.5" y="0.5" width="95" height="25" rx="2.5" ry="2.5" />
+  <image x="5" y="3" width="20" height="20" xlink:href="https://upload.wikimedia.org/wikipedia/commons/7/76/Slack_Icon.png" />
+  <text x="29" y="18">Join Slack</text>
+</svg>

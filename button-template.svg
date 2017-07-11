@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 {{#if width}}{{width}}{{else}}96{{/if}} 26">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+      .backdrop{
+        fill: #fafafa;
+        stroke: #ccc;
+        stroke-width: 1px;
+      }
+      text{
+        font-size: 13px;
+        font-family: 'Open Sans', sans-serif;
+      }
+    </style>
+  </defs>
+  <rect class="backdrop" x="0.5" y="0.5" width="{{#if width}}{{minus width 1}}{{else}}95{{/if}}" height="25" rx="2.5" ry="2.5" />
+  {{#if icon}}
+  <image x="5" y="3" width="20" height="20" xlink:href="{{icon}}" />
+  {{/if}}
+  <text x="{{#if icon}}29{{else}}9{{/if}}" y="18">{{text}}</text>
+</svg>
