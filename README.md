@@ -77,7 +77,7 @@ const template = await fs.readFile('my-template.svg', 'utf8')
 const generator = new ButtonGenerator(template)
 ```
 
-Behind the scenes, the module uses [Handlebars](http://handlebarsjs.com/) and [handlebars-helpers' math helpers](https://github.com/helpers/handlebars-helpers#math), so you can accept whatever options you would like instead of the default template's `text`, `icon`, and `width`.
+Behind the scenes, the module uses [Handlebars](http://handlebarsjs.com/) and [just-handlebars-helpers](https://github.com/leapfrogtechnology/just-handlebars-helpers#helpers), so you can accept whatever options you would like instead of the default template's `text`, `icon`, and `width`.
 
 The only reserved property is `images`, as it is used as noted above to automatically process images. However, you can use whatever property you would like and use the image processing feature to accept a data URL for an arbitrary image.
 

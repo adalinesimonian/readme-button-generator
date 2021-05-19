@@ -4,14 +4,13 @@ import fs from 'fs-extra'
 import Handlebars from 'handlebars'
 import sharp from 'sharp'
 import requestPromise from 'request-promise-native'
-import handlebarsHelpers from 'handlebars-helpers'
+import handlebarsHelpers from 'just-handlebars-helpers'
 
 const request = requestPromise.defaults({
   encoding: null
 })
-handlebarsHelpers.math({
-  handlebars: Handlebars
-})
+
+handlebarsHelpers.registerHelpers(Handlebars)
 
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url))
 
