@@ -6,7 +6,7 @@ Node module that generates a button for use in a readme.
 
 ## Getting started
 
-> **Note:** You'll need Node.js 7.6 or later as this module uses `async`/`await` natively.
+> **Note:** You'll need Node.js 12.20 or later as this module uses ES modules.
 
 ```
 $ npm i --save readme-button-generator
