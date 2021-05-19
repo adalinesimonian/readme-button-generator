@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/adalinesimonian/readme-button-generator#readme",
   "engines": {
-    "node": ">=12.20"
+    "node": ">=12.20 <13 || >=14.13.1 <15 || >=15"
   },
   "engineStrict": true,
   "xo": {
