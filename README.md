@@ -35,7 +35,7 @@ let svg = await generator.generate({
 
 Result:
 
-![Join Slack](https://rawgit.com/adalinesimonian/readme-button-generator/29a2e1e/sample-button.svg)
+![Join Slack](sample-button.svg)
 
 You can then take the output and send it to [svgo](https://github.com/svg/svgo), [svg2png](https://github.com/domenic/svg2png), output it to a file, as an HTTP response - whatever you want!
 
