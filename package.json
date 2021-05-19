@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Generates button images for use in readmes",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "xo && ava"
   },

@@ -1,5 +1,5 @@
 import test from 'ava'
-import Generator from './index'
+import Generator from './index.js'
 
 test('should generate with defaults without errors', async t => {
   t.truthy(await new Generator().generate())
@@ -13,14 +13,14 @@ test('should generate with defaults without errors (async)', async t => {
 test('should allow custom templates', async t => {
   const generator = new Generator('<svg><text>{{text}}</text></svg>')
   t.is(
-    await generator.generate({text: 'Hello, world'}),
+    await generator.generate({ text: 'Hello, world' }),
     '<svg><text>Hello, world</text></svg>'
   )
 })
 
 test('should resize images', async t => {
   const template = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><image xlink:href="{{img}}" /></svg>'
-  const expected = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><image xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAB2HAAAdhwGP5fFlAAAAGUlEQVQokWNhWPSCgRTARJLqUQ2jGoaUBgDwIAGtAdM5tAAAAABJRU5ErkJggg&#x3D;&#x3D;" /></svg>'
+  const expected = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><image xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAB2HAAAdhwGP5fFlAAAAGUlEQVQokWNgWPSCNMQwquHFaCgtGqZJAwCOVooQ7FY46wAAAABJRU5ErkJggg&#x3D;&#x3D;" /></svg>'
   const generator = new Generator(template)
   t.is(
     await generator.generate({

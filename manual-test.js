@@ -1,7 +1,10 @@
-async function test () {
-  const generator = await require('./index').createAsync()
+import fs from 'node:fs'
+import Generator from './index.js'
 
-  require('fs').writeFileSync('test.svg', await generator.generate({
+async function test () {
+  const generator = await Generator.createAsync()
+
+  fs.writeFileSync('test.svg', await generator.generate({
     text: 'Join Slack',
     images: {
       icon: {
@@ -11,4 +14,4 @@ async function test () {
   }))
 }
 
-test().catch(err => console.error(err))
+test().catch(error => console.error(error))
